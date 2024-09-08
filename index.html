@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Login Form Section -->
+      <div class="login-box">
+        <header>
+          <img src="/assets/logo.jpg" alt="Logo" />
+          <span>Are you a new customer? <a href="#">Enroll Now</a></span>
+        </header>
+        <div class="welcome">
+          <h1>Welcome Back</h1>
+          <p>Sign in to your Regions MyMortgage account.</p>
+        </div>
+
+        <div class="form-section">
+          <form>
+            <div class="input-group">
+              <input type="text" id="online-id" required />
+              <label for="online-id">Online ID</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" required />
+              <label for="password">Password</label>
+              <span class="show-password">Show</span>
+            </div>
+            <div class="input-group">
+              <label for="remember" class="lableRemember">Remember Me</label>
+              <input
+                type="checkbox"
+                id="remember"
+                class="inputRemeber"
+                required
+              />
+            </div>
+
+          
+            <div class="login-container">
+              <button id="login-btn">
+                <span id="logBtn">Login</span>
+                <div class="loader"></div>
+                <img src="/assets/logo.png" id="logo" alt="Logo" />
+              </button>
+            </div>
+
+            <div class="links">
+              <a href="#">Forgot Online ID?</a> •
+              <a href="#">Forgot Password?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-box">
+        <img src="/assets/house.jpg" alt="House" />
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
