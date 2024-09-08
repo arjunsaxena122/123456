@@ -14,6 +14,60 @@ body {
   background-color: #f5f5f5;
 }
 
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight background color to ensure visibility */
+  z-index: 9999; /* Ensure it’s above other content */
+}
+
+.one-loader {
+  width: 80px;
+  position: relative;
+  aspect-ratio: 1;
+  --c: #8d7958 91%, #0000;
+  background: radial-gradient(30% 50% at -3px 55%, var(--c)) top right,
+    radial-gradient(30% 50% at -3px 45%, var(--c)) bottom right,
+    radial-gradient(30% 50% at calc(100% + 3px) 55%, var(--c)) top left,
+    radial-gradient(30% 50% at calc(100% + 3px) 45%, var(--c)) bottom left,
+    radial-gradient(50% 30% at 45% calc(100% + 3px), var(--c)) top right,
+    radial-gradient(50% 30% at 45% -3px, var(--c)) bottom right,
+    radial-gradient(50% 30% at 55% calc(100% + 3px), var(--c)) top left,
+    radial-gradient(50% 30% at 55% -3px, var(--c)) bottom left;
+  background-size: 50.1% 50.1%;
+  background-repeat: no-repeat;
+  -webkit-mask: radial-gradient(circle 5px, #0000 90%, #000);
+  animation: l8 1.5s infinite linear;
+}
+
+@keyframes l8 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.one-loader img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+ 
+}
+
+/* Hide container initially */
+.container.hidden {
+  position: absolute ;
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+
 .container {
   display: flex;
   flex-direction: row;
@@ -32,7 +86,6 @@ body {
   transform: scale(0.9);
   pointer-events: none;
 }
-
 
 .login-box {
   flex: 1;
@@ -79,7 +132,6 @@ p {
   display: flex;
   flex-direction: column;
   margin-top: 5px;
-  
 }
 
 form label {
@@ -136,7 +188,7 @@ input:not(:placeholder-shown) + label {
 }
 
 button {
-  min-width: 384px; /* Fixed width for consistency */
+  width: 384px; /* Fixed width for consistency */
   padding: 10px;
   font-size: 16px;
   background-color: #4caf50;
@@ -150,7 +202,7 @@ button {
   align-items: center;
 }
 
-button .load{
+button .load {
   width: 300px; /* Fixed width for consistency */
   font-size: 16px;
   background-color: #4caf50;
@@ -168,7 +220,6 @@ button.loading {
   background-color: #4caf50;
   padding: 20px;
 }
-
 
 .loader {
   position: absolute;
@@ -260,7 +311,6 @@ button.loading .loader {
   text-decoration: underline;
 }
 
-
 .image-box {
   flex: 1;
   display: flex;
@@ -274,13 +324,12 @@ button.loading .loader {
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
- 
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .login-box {
@@ -289,7 +338,12 @@ button.loading .loader {
   }
 
   .image-box {
-    height: 250px; 
+    height: 250px;
+  }
+
+  button {
+    width: 100%; /* Make button full width on medium screens */
+    padding: 12px; /* Adjust padding for better touch targets */
   }
 }
 
@@ -298,8 +352,10 @@ button.loading .loader {
     padding: 15px;
   }
 
-  .button{
-    
+  button {
+    max-width: 100%; /* Ensure button doesn't exceed container width */
+    padding: 10px; /* Adjust padding for small screens */
+    font-size: 14px; /* Adjust font size */
   }
 
   form label {
@@ -314,10 +370,4 @@ button.loading .loader {
   .login-btn {
     font-size: 14px;
   }
-
-  .extra-links {
-    font-size: 12px;
-  }
 }
-
-

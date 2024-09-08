@@ -8,6 +8,16 @@ const image = document.getElementById('image');
 const container = document.querySelector('.container');
 const imageBox = document.querySelector('.image-box');
 
+document.addEventListener("DOMContentLoaded", function () {
+  const loaderContainer = document.getElementById('loader-container');
+  const container = document.querySelector('.container');
+
+  // Simulate loading and hide loader
+  setTimeout(() => {
+    loaderContainer.style.display = 'none'; // Hide loader
+    container.classList.remove('hidden'); // Show container
+  }, 2000); // Adjust time as needed
+});
 
 
 
